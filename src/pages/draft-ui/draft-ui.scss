@@ -1,0 +1,148 @@
+.app {
+    width: 1920px;
+    height: 1080px;
+    color: white;
+    font-weight: 700;
+}
+
+.video {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    z-index: -5;
+}
+
+.opaque {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    z-index: -4;
+    background-color: black;
+    opacity: .5;
+}
+
+.header {
+    height: 106px;
+}
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 3rem;
+}
+
+.streamer-name {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.emcee-draft-data {
+    height: 284px;
+}
+
+.camera {
+    border: 2px solid grey;
+    margin: auto;
+
+    &.emcee {
+        width: 400px;
+        height: 225px;
+    }
+}
+
+.undrafted-players {
+    height: 100%;
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 5px;
+
+    tr {
+        background-color: rgba(255, 255, 255, .5);
+    }
+
+    tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, .6);
+    }
+
+    th {
+        vertical-align: middle;
+        text-align: center;
+        height: 50px;
+        border: 2px solid white;
+    }
+
+    td {
+        vertical-align: middle;
+        text-align: center;
+        height: 32px;
+        width: 25%
+    }
+}
+
+.captains {
+    margin-top: 49px;
+    height: 287px;
+}
+
+.draft-info { 
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 5px;
+    height: 225px;
+    width: 300px;
+
+    tr {
+        background-color: rgba(255, 255, 255, .5);
+    }
+
+    th {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    td {
+        height: 43.5px;
+        padding: 0 15px;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+        padding-left: 40px;
+        border: 2px solid white;
+
+        .role-icon {
+            position: absolute;
+            left: 10px;
+            top: 4px;
+            width: 60px;
+
+            &.upnext {
+                top: 4px;
+                left: 15px;
+                width: 53px;
+            }
+        }
+    }
+}
+
+.timer {
+    font-size: 24px;
+}
+
+.container-fluid {
+    position: relative;
+}
+
+.tcl-logo {
+    height: 80px;
+    position: absolute;
+
+    &.left {
+        left: 25px;
+        top: 10px;
+    }
+    &.right {
+        height: 100px;
+        right: 5px;
+    }
+}
