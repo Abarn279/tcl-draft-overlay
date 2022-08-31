@@ -7,50 +7,50 @@ import Timer from '../../components/timer/timer';
 interface Team {
   captain: string;
   top: string;
-  jg: string;
+  mid: string;
   adc: string;
   sup: string;
 }
 
 const getUnpickedRoster = (): string[][] => [
   [
-    "LostInTheSauce",
-    "Tokemon Panda",
-    "MusicX",
+    "BludBathnBeyond",
+    "TJsobeast",
+    "Hippogriff",
+    "TheMusicalJaws",
     "1M TINY RICK",
-    "Autopsy",
-    "Bromanzilla"
+    "MusicX"
   ],
   [
-    "Blitzkrieg",
-    "Rook Stout",
-    "SWORD M45T3R",
-    "Spurg",
-    "Espynn",
-    "Wally Warp"
+    "Sandy Snake",
+    "Wøjtek",
+    "Abarn",
+    "CNTRL",
+    "illTakeMid",
+    "Verd"
   ],
   [
     "SpeedyBandito",
     "Tailwhip",
+    "IREP",
     "Loosive",
-    "ToastyTG",
-    "WHO IS THIS",
-    "Devyous"
+    "Calbert",
+    "AIBox"
   ],
   [
-    "Bush League",
-    "AntiFlash",
+    "Spirit of Fate ",
+    "droid08",
     "SwissArmyCabinet",
-    "Droid08",
     "Worst Tactics NA",
-    "Dbrann68"
+    "dbrann68",
+    "Lemonilla"
   ]]
 
 const DraftUI = () => {
   var unpickedRoster = getUnpickedRoster();
 
   // Get captains and pick order
-  const captains = ["Abarn", "Sandy Snake", "Verd", "BludBathnBeyond", "Vrael", "Wojtek"];
+  const captains = ["Spurg", "TheSpartanTunic", "Rook Stout", "SWORD M45T3R", "Bully", "Tony"];
   const pickOrder = captains.concat(Object.assign([], captains).reverse()).concat(captains).concat(Object.assign([], captains).reverse());
 
   var teamsRaw = captains
@@ -58,7 +58,7 @@ const DraftUI = () => {
       return {
         captain: captain,
         top: "",
-        jg: "",
+        mid: "",
         adc: "",
         sup: ""
       } as Team
@@ -83,8 +83,8 @@ const DraftUI = () => {
         thisTeam.top = player;
         break;
       case 1:
-        if (thisTeam.jg) return;
-        thisTeam.jg = player;
+        if (thisTeam.mid) return;
+        thisTeam.mid = player;
         break;
       case 2:
         if (thisTeam.adc) return;
@@ -116,7 +116,7 @@ const DraftUI = () => {
 
   const getTeam = (name: string): string[] => {
     const team = teams.find(t => t.captain === name)!;
-    return [team.top, team.jg, team.captain, team.adc, team.sup];
+    return [team.top, team.captain, team.mid, team.adc, team.sup];
   }
 
   return (
@@ -169,7 +169,7 @@ const DraftUI = () => {
               <thead>
                 <tr>
                   <th><img src={'./top.png'} /></th>
-                  <th><img src={'./jg.png'} /></th>
+                  <th><img src={'./mid.png'} /></th>
                   <th><img src={'./bot.png'} /></th>
                   <th><img src={'./sup.png'} /></th>
                 </tr>
