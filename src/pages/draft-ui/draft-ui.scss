@@ -58,11 +58,11 @@
     border-spacing: 5px;
 
     tr {
-        background-color: rgba(255, 255, 255, .5);
+        background-color: rgba(255, 255, 255, .4);
     }
 
     tr:nth-child(even) {
-        background-color: rgba(255, 255, 255, .6);
+        background-color: rgba(255, 255, 255, .5);
     }
 
     th {
@@ -93,7 +93,7 @@
     width: 300px;
 
     tr {
-        background-color: rgba(255, 255, 255, .5);
+        background-color: rgba(0, 0, 0, .5);
     }
 
     th {
@@ -134,15 +134,14 @@
 }
 
 .tcl-logo {
-    height: 80px;
+    height: 90px;
     position: absolute;
+    top: 5px;
 
     &.left {
         left: 25px;
-        top: 10px;
     }
     &.right {
-        height: 100px;
-        right: 5px;
+        right: 25px;
     }
 }

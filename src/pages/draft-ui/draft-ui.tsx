@@ -7,50 +7,50 @@ import Timer from '../../components/timer/timer';
 interface Team {
   captain: string;
   top: string;
-  mid: string;
+  jg: string;
   adc: string;
-  sup: string;
+  mid: string;
 }
 
 const getUnpickedRoster = (): string[][] => [
   [
+    "Autöpsy",
     "BludBathnBeyond",
-    "TJsobeast",
     "Hippogriff",
-    "TheMusicalJaws",
-    "1M TINY RICK",
-    "MusicX"
+    "Jbob06",
+    "Jjazz Music",
+    "Sirerin"
   ],
   [
-    "Sandy Snake",
-    "Wøjtek",
+    "1M TINY RICK",
+    "Calbert",
+    "Corridian",
+    "Reformed Bully",
+    "Rook Stout",
+    "Spurg"
+  ],
+  [
     "Abarn",
     "CNTRL",
-    "illTakeMid",
-    "Verd"
+    "illtakeMid",
+    "Sandy Snake",
+    "Verd",
+    "Tony"
   ],
   [
-    "SpeedyBandito",
-    "Tailwhip",
-    "IREP",
     "Loosive",
-    "Calbert",
-    "AIBox"
-  ],
-  [
-    "Spirit of Fate ",
-    "droid08",
-    "SwissArmyCabinet",
-    "Worst Tactics NA",
-    "dbrann68",
-    "Lemonilla"
+    "Rioklu",
+    "SpeedyBandito",
+    "tailwhip",
+    "ToastyTG",
+    "Wøjtek"
   ]]
 
 const DraftUI = () => {
   var unpickedRoster = getUnpickedRoster();
 
   // Get captains and pick order
-  const captains = ["Spurg", "TheSpartanTunic", "Rook Stout", "SWORD M45T3R", "Bully", "Tony"];
+  const captains = ["Lemonilla", "Bush League ", "Espynn", "Rudy", "IREP", "SwissArmyCabinet"];
   const pickOrder = captains.concat(Object.assign([], captains).reverse()).concat(captains).concat(Object.assign([], captains).reverse());
 
   var teamsRaw = captains
@@ -58,9 +58,9 @@ const DraftUI = () => {
       return {
         captain: captain,
         top: "",
+        jg: "",
         mid: "",
-        adc: "",
-        sup: ""
+        adc: ""
       } as Team
     });
 
@@ -83,16 +83,16 @@ const DraftUI = () => {
         thisTeam.top = player;
         break;
       case 1:
-        if (thisTeam.mid) return;
-        thisTeam.mid = player;
+        if (thisTeam.jg) return;
+        thisTeam.jg = player;
         break;
       case 2:
-        if (thisTeam.adc) return;
-        thisTeam.adc = player;
+        if (thisTeam.mid) return;
+        thisTeam.mid = player;
         break
       case 3:
-        if (thisTeam.sup) return;
-        thisTeam.sup = player;
+        if (thisTeam.adc) return;
+        thisTeam.adc = player;
         break;
       default:
         return;
@@ -116,27 +116,27 @@ const DraftUI = () => {
 
   const getTeam = (name: string): string[] => {
     const team = teams.find(t => t.captain === name)!;
-    return [team.top, team.captain, team.mid, team.adc, team.sup];
+    return [team.top, team.jg, team.mid, team.adc, team.captain];
   }
 
   return (
     <div className="app">
       <video autoPlay loop muted className='video'>
-        <source src={'./animated-season-2013.webm'} type='video/webm' />
+        <source src={'./BG.mp4'} type='video/webm' />
       </video>
       <div className='opaque'></div>
       <div className='container-fluid'>
         <img className='tcl-logo left' src='mini.png' />
-        <img className='tcl-logo right' src='tcl2.png' />
+        <img className='tcl-logo right' src='mini.png' />
         <div className='row header'>
-          <h1 className="title">TCL Season 4 Draft</h1>
+          <h1 className="title">TCL Season 7 Draft</h1>
         </div>
         <div className='row'>
           <div className='col'>
             <div className='row emcee-draft-data'>
               <div className='col-6'>
                 <div className='camera emcee'></div>
-                <h2 className="streamer-name">Loosive</h2>
+                <h2 className="streamer-name">Bully</h2>
               </div>
               <div className='col-6'>
                 <table className='draft-info'>
@@ -169,9 +169,9 @@ const DraftUI = () => {
               <thead>
                 <tr>
                   <th><img src={'./top.png'} /></th>
+                  <th><img src={'./jg.png'} /></th>
                   <th><img src={'./mid.png'} /></th>
                   <th><img src={'./bot.png'} /></th>
-                  <th><img src={'./sup.png'} /></th>
                 </tr>
               </thead>
               <tbody>
